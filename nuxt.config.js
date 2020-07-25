@@ -34,7 +34,6 @@ export default {
         content:
           DESCRIPTION,
       },
-      { name: 'viewport', hid: 'viewport', content: 'width=device-width' },
       { property: 'og:locale', hid: 'og:locale', content: 'ja_JP' },
       { property: 'og:type', hid: 'og:type', content: 'website' },
       {

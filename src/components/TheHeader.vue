@@ -11,12 +11,14 @@
         長期戦で忘れがちなPPをしっかり管理。自動で保存しいつでも読み込めるPP管理ツール
       </p>
     </div>
-    <a
-      href="/pokemon63/"
-      target="_blank"
-      class="p-2 border border-blue-600 text-blue-600 rounded overflow-hidden hover:bg-blue-100"
-    >
-      みんなの63へ »
-    </a>
+    <client-only>
+      <a
+        href="/pokemon63/"
+        target="_blank"
+        class="p-2 border border-blue-600 text-blue-600 rounded overflow-hidden hover:bg-blue-100"
+      >
+        みんなの63へ »
+      </a>
+    </client-only>
   </header>
 </template>
