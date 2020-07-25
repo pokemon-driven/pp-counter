@@ -33,7 +33,9 @@
       <button
         type="button"
         class="transition-all w-16 h-12 p-2 rounded-sm overflow-hidden bg-red-500 border border-red-500 hover:bg-red-600 text-white font-bold text-xl"
-        @click="updateState(merge({ count: abilityCount.count - 1 }))"
+        @click="
+          updateState(merge({ count: Math.max(0, abilityCount.count - 1) }))
+        "
       >
         -
       </button>

@@ -21,7 +21,7 @@
                 @input="
                   updatePokemonData({
                     ...activePokemon,
-                    name: $event.target.value,
+                    name: $event.target.value || '',
                   })
                 "
                 :value="activePokemon.name"
@@ -50,11 +50,16 @@
               <span>メモ</span>
             </AppHeading>
             <textarea
-              name=""
-              id=""
               cols="30"
               rows="10"
               class="w-full h-64 border leading-relaxed p-4"
+              :value="activePokemon.note"
+              @input="
+                updatePokemonData({
+                  ...activePokemon,
+                  note: $event.target.value || '',
+                })
+              "
             ></textarea>
           </div>
           <div class="flex justify-end mt-2">

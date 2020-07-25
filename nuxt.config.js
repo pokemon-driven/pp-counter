@@ -50,6 +50,9 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
   ],
+  router: {
+    base: '/pp-counter'
+  },
   /*
    ** Nuxt.js modules
    */

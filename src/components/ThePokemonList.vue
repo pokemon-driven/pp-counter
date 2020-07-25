@@ -1,11 +1,15 @@
 <template>
   <ul class="border-gray-400 border-b w-full rounded overflow-hidden">
     <PokemonListItem
-      v-for="pokemon in pokemonList"
+      v-for="(pokemon, number) in pokemonList"
+      :key="pokemon.id"
       :name="pokemon.name"
       :active="pokemon.id === activePokemonId"
       @click="$emit('switch', pokemon.id)"
-      class="rounded-t overflow-hidden"
+      :class="{
+        'rounded-t': number === 0,
+        'overflow-hidden': number === 0,
+      }"
     />
     <PokemonListItem
       class="rounded-b overflow-hidden"
