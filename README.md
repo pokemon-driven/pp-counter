@@ -1,4 +1,8 @@
-# pp-counter
+![img](./src/static/opengraph.png)
+
+# PP Counter for Sword/Shield
+
+https://pokedri.com/pp-counter/
 
 ## Build Setup
 
@@ -18,3 +22,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## LICENCE
+
+MIT
