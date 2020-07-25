@@ -107,7 +107,9 @@ export default Vue.extend({
             note: '',
             abilityCounts: [
               {
-                ability: abilityList.find((ab) => ab.name === 'ステルスロック')!,
+                ability: abilityList.find(
+                  (ab) => ab.name === 'ステルスロック'
+                )!,
                 order: 1,
                 count: 0,
               },
