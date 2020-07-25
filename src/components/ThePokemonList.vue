@@ -11,6 +11,7 @@
       class="rounded-b overflow-hidden"
       name="+ 新規追加"
       :active="false"
+      @click="$emit('new')"
     />
   </ul>
 </template>

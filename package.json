@@ -13,11 +13,13 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.10",
     "nuxt": "^2.13.0",
+    "uuid": "^8.2.0",
     "v-suggestions": "^1.1.1"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^1.0.3",
     "@nuxtjs/tailwindcss": "^2.0.0",
+    "@types/uuid": "^8.0.0",
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.0.1",

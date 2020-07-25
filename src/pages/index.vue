@@ -8,6 +8,7 @@
             :pokemonList="state.pokemonList"
             :activePokemonId="state.activePokemonId"
             @switch="state.activePokemonId = $event"
+            @new="createNewPokemon"
           />
         </div>
         <div class="w-4 h-1"></div>
@@ -57,7 +58,11 @@
             ></textarea>
           </div>
           <div class="flex justify-end mt-2">
-            <button type="button" class="px-2 appearance-none text-red-500">
+            <button
+              type="button"
+              class="px-2 appearance-none text-red-500"
+              @click="deletePokemon"
+            >
               <img src="~/assets/images/trash.svg" width="16" alt="削除" />
             </button>
           </div>
@@ -74,6 +79,7 @@
 import Vue from 'vue'
 import { Pokemon, AbilityCount } from '~/types/struct'
 import { abilityList } from '../assets/json/abilityList'
+import { v4 as uuid } from 'uuid'
 
 type LocalData = {
   isLaunched: boolean
@@ -177,6 +183,37 @@ export default Vue.extend({
     },
   },
   methods: {
+    createNewPokemon() {
+      const id = uuid()
+      this.state.pokemonList.push({
+        id,
+        name: '？？？',
+        note: '',
+        abilityCounts: [
+          {
+            ability: abilityList.find((ab) => ab.name === 'たいあたり')!,
+            order: 1,
+            count: 0,
+          },
+          {
+            ability: abilityList.find((ab) => ab.name === 'たいあたり')!,
+            order: 2,
+            count: 0,
+          },
+          {
+            ability: abilityList.find((ab) => ab.name === 'たいあたり')!,
+            order: 3,
+            count: 0,
+          },
+          {
+            ability: abilityList.find((ab) => ab.name === 'たいあたり')!,
+            order: 4,
+            count: 0,
+          },
+        ],
+      })
+      this.state.activePokemonId = id
+    },
     updateAbilityCount(mergeValue: Partial<AbilityCount>) {
       const abilityCounts = this.activePokemon.abilityCounts.map(
         (abilityCount) => {
@@ -207,6 +244,17 @@ export default Vue.extend({
     },
     save() {
       localStorage.setItem('auto_save', JSON.stringify(this.state))
+    },
+    deletePokemon() {
+      const id = this.activePokemon.id
+      if (
+        window.confirm(`${this.activePokemon.name} のデータを削除しますか？`)
+      ) {
+        this.state.activePokemonId = this.state.pokemonList[0].id
+        this.state.pokemonList = this.state.pokemonList.filter(
+          (p) => p.id !== id
+        )
+      }
     },
   },
 })
